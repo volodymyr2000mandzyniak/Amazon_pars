@@ -1,3 +1,10 @@
+PATH
+  remote: .
+  specs:
+    amazon_pars (0.1.0)
+      capybara (~> 3.40)
+      selenium-webdriver (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -91,6 +98,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  amazon_pars!
   capybara
   rspec
   rubocop

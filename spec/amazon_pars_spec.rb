@@ -1,14 +1,14 @@
-# # spec/amazon_scraper_spec.rb
+# spec/amazon_pars_spec.rb
 
 require 'rspec'
 require 'capybara'
 require 'selenium-webdriver'
 require_relative '../lib/amazon_pars'
 
-RSpec.describe JobScraper do
+RSpec.describe AmazonPars::JobScraper do
   let(:url) { 'https://amazon.jobs/content/en/job-categories/administrative-support' }
-  let(:scraper) { JobScraper.new(url) }
-  
+  let(:scraper) { AmazonPars::JobScraper.new(url) }
+
   before do
     allow(scraper).to receive(:visit) # Mock visit method to avoid real network requests
     allow(scraper).to receive(:sleep) # Avoid delays in testing
@@ -18,11 +18,11 @@ RSpec.describe JobScraper do
     it 'returns an array of job URLs' do
       # Mock elements to return a double object that responds to :[]
       mock_elements = [double('element', href: 'http://example.com/job1'), double('element', href: 'http://example.com/job2')]
-      
+
       # Explicitly mock the [] method to return the href value
       allow(mock_elements[0]).to receive(:[]).with(:href).and_return('http://example.com/job1')
       allow(mock_elements[1]).to receive(:[]).with(:href).and_return('http://example.com/job2')
-      
+
       allow(scraper).to receive(:all).and_return(mock_elements)
 
       job_urls = scraper.scrape_job_urls
