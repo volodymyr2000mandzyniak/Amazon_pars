@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'lib/amazon_pars'
 
 scraper = JobScraper.new('https://amazon.jobs/content/en/job-categories/administrative-support')
