@@ -1,14 +1,12 @@
-# Job Scraper
+## Job Scraper
 
-## Опис
+## Description.
 
-Цей скрипт використовує `Capybara` та `Selenium WebDriver` для збору даних про вакансії з сайту Amazon Jobs. Він витягує посилання на вакансії з основної сторінки, відвідує кожну вакансію та збирає такі дані, як назва вакансії, посилання для подачі заявки, місцезнаходження та опис вакансії.
+This script uses `Capybara` and `Selenium WebDriver` to collect job data from the Amazon Jobs site. It extracts job links from the main page, visits each job, and collects data such as job title, application link, location, and job description.
 
-## Вимоги
+## Requirements
 
-- Ruby 3.2 або новіша версія
-- `Capybara`
-- `Selenium WebDriver`
-- `chromedriver` для браузера Chrome
-
-
+- Ruby 3.2 or later
+- `Capybara`.
+- `Selenium WebDriver`.
+- `chromedriver` for the Chrome browser
