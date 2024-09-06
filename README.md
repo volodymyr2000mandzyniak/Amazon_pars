@@ -1,8 +1,9 @@
-## Job Scraper
+## AmazonPars
 
 ## Description.
 
-This script uses `Capybara` and `Selenium WebDriver` to collect job data from the Amazon Jobs site. It extracts job links from the main page, visits each job, and collects data such as job title, application link, location, and job description.
+`AmazonPars` is a Ruby gem designed to scrape job listings from the Amazon Jobs website.
+
 
 ## Requirements
 
@@ -10,3 +11,27 @@ This script uses `Capybara` and `Selenium WebDriver` to collect job data from th
 - `Capybara`.
 - `Selenium WebDriver`.
 - `chromedriver` for the Chrome browser
+
+
+## Installation
+
+To install the gem, add this line to your application's Gemfile:
+
+```ruby
+gem 'amazon_pars'
+
+№№ Usage
+## Installation
+require 'amazon_pars'
+
+# Initialize the scraper with the URL of the job category page
+scraper = AmazonPars::JobScraper.new('https://amazon.jobs/content/en/job-categories/administrative-support')
+
+# Scrape job URLs
+job_urls = scraper.scrape_job_urls
+
+# Scrape and display job details for each job
+scraper.scrape_jobs_data(job_urls)
+
+# Close the browser after scraping
+scraper.close_browser
